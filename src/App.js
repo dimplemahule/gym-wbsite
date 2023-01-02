@@ -5,23 +5,28 @@ import Subscription from "./components/Subscription";
 import Pricing from "./components/Pricing";
 import Program from "./components/Program";
 import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Register from "./components/SignUp";
 
 
-
- function App(){
+function App() {
   return <div className="App">
-    <Header />
-    <main>
-    <Hero />
-    <About />
-    <Program />
-    <Pricing />
-    <Subscription />
-    <Footer />
-    
-    </main>
-   
-  </div>
- }
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<main>
+          <Hero />
+          <About />
+          <Program />
+          <Pricing />
+          <Subscription />
+        </main>} />
+        <Route path="/signup" element={<Register />} />
+      </Routes>
+      <Footer />
+    </Router>
 
- export default App;
+  </div>
+}
+
+export default App;

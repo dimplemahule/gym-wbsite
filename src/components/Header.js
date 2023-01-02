@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () =>{
     const [show, setShow] = useState(false)
@@ -25,8 +26,8 @@ const Header = () =>{
             <i className="ri-close-line nav-close"></i>
           </div>
         </ul>
-
-        <a href="#program" className="nav-button" onClick={() => setShow(!show)}>Register</a>
+        <Link to="/signup" className="nav-button" onClick={() => setShow(!show)}>Register</Link>
+        {/* <a href="#program" className="nav-button" onClick={() => setShow(!show)}>Register</a> */}
       </div>
 
       <div className="nav-toggle" onClick={() => setShow(!show)}>
